@@ -24,6 +24,7 @@ import com.messiesuii.veterinary.services.UserService;
 
 @RestController
 @RequestMapping("/pet")
+@CrossOrigin(origins="*")
 public class PetController {
 	
 	@Autowired
