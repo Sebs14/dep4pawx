@@ -1,0 +1,67 @@
+asds
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   .gitignore
+#	new file:   .mvn/wrapper/maven-wrapper.jar
+#	new file:   .mvn/wrapper/maven-wrapper.properties
+#	new file:   mvnw
+#	new file:   mvnw.cmd
+#	new file:   pom.xml
+#	new file:   src/main/java/com/messiesuii/veterinary/VeterinaryApplication.java
+#	new file:   src/main/java/com/messiesuii/veterinary/configs/WebSecurityConfig.java
+#	new file:   src/main/java/com/messiesuii/veterinary/controllers/AppointmentController.java
+#	new file:   src/main/java/com/messiesuii/veterinary/controllers/AuthController.java
+#	new file:   src/main/java/com/messiesuii/veterinary/controllers/PetController.java
+#	new file:   src/main/java/com/messiesuii/veterinary/controllers/RolesController.java
+#	new file:   src/main/java/com/messiesuii/veterinary/controllers/UserController.java
+#	new file:   src/main/java/com/messiesuii/veterinary/controllers/VaccineController.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/dtos/AppointmentInfo.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/dtos/LoginDTO.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/dtos/MessageDTO.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/dtos/PageableDTO.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/dtos/PetInfo.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/dtos/RoleInfo.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/dtos/TokenDTO.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/dtos/UserInfo.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/dtos/VaccineInfo.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/entities/Appointment.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/entities/Pet.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/entities/PetMedicalRecord.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/entities/Roles.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/entities/Token.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/entities/User.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/entities/UserRoles.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/entities/VaccineRecord.java
+#	new file:   src/main/java/com/messiesuii/veterinary/models/entities/Veterinary.java
+#	new file:   src/main/java/com/messiesuii/veterinary/repositories/AppointmentRepository.java
+#	new file:   src/main/java/com/messiesuii/veterinary/repositories/PetRepository.java
+#	new file:   src/main/java/com/messiesuii/veterinary/repositories/RolesRepository.java
+#	new file:   src/main/java/com/messiesuii/veterinary/repositories/TokenRepository.java
+#	new file:   src/main/java/com/messiesuii/veterinary/repositories/UserRepository.java
+#	new file:   src/main/java/com/messiesuii/veterinary/repositories/VaccineRecordRepository.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/AppointmentService.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/PetMedicalRecordService.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/PetsService.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/RolesService.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/UserRolesService.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/UserService.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/VaccineRecordService.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/VeterinaryService.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/impls/AppointmentServiceImpl.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/impls/AuthUserDetailsServiceImpl.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/impls/PetsServiceImpl.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/impls/RolesServiceImpl.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/impls/UserServiceImpl.java
+#	new file:   src/main/java/com/messiesuii/veterinary/services/impls/VaccineRecordServiceImpl.java
+#	new file:   src/main/java/com/messiesuii/veterinary/utils/JwtAuthenticationEntryPoint.java
+#	new file:   src/main/java/com/messiesuii/veterinary/utils/JwtFilter.java
+#	new file:   src/main/java/com/messiesuii/veterinary/utils/TokenManager.java
+#	new file:   src/main/resources/application.properties
+#	new file:   src/test/java/com/messiesuii/veterinary/VeterinaryApplicationTests.java
+#
