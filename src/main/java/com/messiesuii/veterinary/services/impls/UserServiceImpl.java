@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.messiesuii.veterinary.services.UserService;
 import com.messiesuii.veterinary.models.entities.Token;
+import com.messiesuii.veterinary.models.dtos.GoogleUserDTO;
 import com.messiesuii.veterinary.models.dtos.PageableDTO;
 import com.messiesuii.veterinary.models.dtos.UserInfo;
 import com.messiesuii.veterinary.models.entities.User;
@@ -48,6 +49,17 @@ public class UserServiceImpl implements UserService{
 		userRepository.save(user);
 		
 	}
+	
+	@Override
+	public void registerGoogle(GoogleUserDTO userInfo) throws Exception {
+		User user = new User();
+		
+		user.setEmail(userInfo.getEmail());
+		user.setName(userInfo.getName());
+		
+		userRepository.save(user);
+		
+	}
 
 	@Override
 	public List<User> findAll() throws Exception {
@@ -58,6 +70,14 @@ public class UserServiceImpl implements UserService{
 	public User findOneByEmail(String email) throws Exception {
 		User foundUser = userRepository	
 				.findOneByEmail(email);
+		
+		return foundUser;
+	}
+	
+	@Override
+	public User findOneById(Long id) throws Exception {
+		User foundUser = userRepository	
+				.findOneById(id);
 		
 		return foundUser;
 	}
@@ -111,4 +131,6 @@ public class UserServiceImpl implements UserService{
 			}
 		});
 	}
+
+	
 }
