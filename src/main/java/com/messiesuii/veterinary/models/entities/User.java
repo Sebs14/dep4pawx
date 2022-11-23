@@ -24,7 +24,7 @@ public class User implements Serializable {
 	@Column(name = "id_user")
 	@SequenceGenerator(name = "users_id_user_seq", sequenceName = "users_id_user_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_id_user_seq")
-	private Long id_user;
+	private Long id;
 	
 	@Column(name = "email")
 	private String email;
@@ -42,7 +42,7 @@ public class User implements Serializable {
 	//Constructors
 	public User(Long id_user, String email, String password, String name) {
 		super();
-		this.id_user = id_user;
+		this.id = id_user;
 		this.email = email;
 		this.password = password;
 		this.name = name;
@@ -54,11 +54,11 @@ public class User implements Serializable {
 
 	//Getters and setters
 	public Long getId_user() {
-		return id_user;
+		return id;
 	}
 
 	public void setId_user(Long id_user) {
-		this.id_user = id_user;
+		this.id = id_user;
 	}
 
 	public String getEmail() {

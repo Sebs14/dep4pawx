@@ -6,4 +6,5 @@ import com.messiesuii.veterinary.models.entities.User;
 
 public interface UserRepository extends JpaRepository<User, Long>{
 	User findOneByEmail(String email);
+	User findOneById(Long id_user);
 }

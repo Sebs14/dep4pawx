@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.messiesuii.veterinary.utils.TokenManager;
+import com.messiesuii.veterinary.models.dtos.GoogleUserDTO;
 import com.messiesuii.veterinary.models.dtos.LoginDTO;
 import com.messiesuii.veterinary.models.dtos.TokenDTO;
 import com.messiesuii.veterinary.models.dtos.MessageDTO;
@@ -71,6 +72,49 @@ public class AuthController {
 		}
 	}
 	
+	@PostMapping("/signupgoogle")
+	public ResponseEntity<TokenDTO> registerUserWithGoogle(@Valid GoogleUserDTO userInfo, BindingResult result) {
+		try {
+			if(result.hasErrors()) {
+				return new ResponseEntity<>(
+						new TokenDTO(),
+						HttpStatus.BAD_REQUEST
+					);
+			}
+			
+			User foundUser = userService
+					.findOneByEmail(userInfo.getEmail());
+			
+			if(foundUser != null) {
+				return new ResponseEntity<>(
+						new TokenDTO(),
+						HttpStatus.BAD_REQUEST
+					);
+			}
+			
+			userService.registerGoogle(userInfo);
+			
+			User foundUser1 = userService
+					.findOneByEmail(userInfo.getEmail());
+						
+			final String token = tokenManager.generateJwtToken(foundUser1.getEmail());
+			
+			userService.insertToken(foundUser1, token); 
+			
+			return new ResponseEntity<>(
+						new TokenDTO(token),
+						HttpStatus.CREATED
+					);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return new ResponseEntity<>(
+					new TokenDTO(),
+					HttpStatus.INTERNAL_SERVER_ERROR
+				);
+		}
+	}
+	
 	@PostMapping("/signin")
 	private ResponseEntity<TokenDTO> login(@Valid LoginDTO loginInfo, BindingResult result) {
 		try {
@@ -94,6 +138,38 @@ public class AuthController {
 			final String token = tokenManager.generateJwtToken(user.getEmail());
 			
 			userService.insertToken(user, token); 
+			
+			return new ResponseEntity<>(
+						new TokenDTO(token),
+						HttpStatus.CREATED
+					);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return new ResponseEntity<>(
+					new TokenDTO(),
+					HttpStatus.INTERNAL_SERVER_ERROR
+				);
+		}
+	}
+	
+	@PostMapping("/signingoogle")
+	private ResponseEntity<TokenDTO> logingoogle(GoogleUserDTO loginInfo, BindingResult result) {
+		try {
+						
+			User foundUser = userService
+					.findOneByEmail(loginInfo.getEmail());
+			
+			if(foundUser == null) {
+				return new ResponseEntity<>(
+						new TokenDTO(),
+						HttpStatus.BAD_REQUEST
+					);
+			}
+			
+			final String token = tokenManager.generateJwtToken(foundUser.getEmail());
+
+			userService.insertToken(foundUser, token); 
 			
 			return new ResponseEntity<>(
 						new TokenDTO(token),
